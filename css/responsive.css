@@ -1,0 +1,189 @@
+/* ===============================
+   LARGE DEVICES
+================================ */
+
+@media (max-width:1200px){
+
+    section{
+        padding:80px 7%;
+    }
+    
+    nav{
+        width:95%;
+    }
+    
+    }
+    
+    
+    /* ===============================
+       TABLETS
+    ================================ */
+    
+    @media (max-width:992px){
+    
+    h1{
+        font-size:45px;
+    }
+    
+    h2{
+        font-size:32px;
+    }
+    
+    h3{
+        font-size:22px;
+    }
+    
+    nav{
+    
+        flex-direction:column;
+        height:auto;
+        padding:20px 0;
+    
+    }
+    
+    nav ul{
+    
+        margin-top:20px;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    
+    }
+    
+    #home{
+    
+        text-align:center;
+        align-items:center;
+    
+    }
+    
+    #home p{
+    
+        width:100%;
+    
+    }
+    
+    #skills ul{
+    
+        grid-template-columns:1fr;
+    
+    }
+    
+    }
+    
+    
+    /* ===============================
+       MOBILE
+    ================================ */
+    
+    @media (max-width:768px){
+    
+    section{
+    
+        padding:70px 6%;
+    
+    }
+    
+    h1{
+    
+        font-size:36px;
+    
+    }
+    
+    h2{
+    
+        font-size:28px;
+    
+    }
+    
+    h3{
+    
+        font-size:20px;
+    
+    }
+    
+    nav h2{
+    
+        font-size:22px;
+    
+    }
+    
+    nav ul{
+    
+        gap:15px;
+    
+    }
+    
+    .btn,
+    .btn-outline{
+    
+        display:block;
+    
+        width:220px;
+    
+        margin:15px auto;
+    
+        text-align:center;
+    
+    }
+    
+    #home{
+    
+        padding-top:100px;
+    
+    }
+    
+    #about p{
+    
+        text-align:left;
+    
+    }
+    
+    }
+    
+    
+    /* ===============================
+       SMALL MOBILE
+    ================================ */
+    
+    @media (max-width:480px){
+    
+    section{
+    
+        padding:60px 20px;
+    
+    }
+    
+    h1{
+    
+        font-size:30px;
+    
+    }
+    
+    h2{
+    
+        font-size:24px;
+    
+    }
+    
+    p{
+    
+        font-size:15px;
+    
+    }
+    
+    nav ul{
+    
+        flex-direction:column;
+        align-items:center;
+    
+    }
+    
+    .btn,
+    .btn-outline{
+    
+        width:100%;
+    
+    }
+    
+    }

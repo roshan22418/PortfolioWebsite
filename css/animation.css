@@ -1,0 +1,251 @@
+/* ===============================
+FADE ANIMATION
+================================ */
+
+@keyframes fadeIn{
+
+from{
+
+ opacity:0;
+ transform:translateY(40px);
+
+}
+
+to{
+
+ opacity:1;
+ transform:translateY(0);
+
+}
+
+}
+
+/* ===============================
+SLIDE LEFT
+================================ */
+
+@keyframes slideLeft{
+
+from{
+
+ opacity:0;
+ transform:translateX(-80px);
+
+}
+
+to{
+
+ opacity:1;
+ transform:translateX(0);
+
+}
+
+}
+
+/* ===============================
+SLIDE RIGHT
+================================ */
+
+@keyframes slideRight{
+
+from{
+
+ opacity:0;
+ transform:translateX(80px);
+
+}
+
+to{
+
+ opacity:1;
+ transform:translateX(0);
+
+}
+
+}
+
+/* ===============================
+ZOOM
+================================ */
+
+@keyframes zoomIn{
+
+from{
+
+ opacity:0;
+ transform:scale(.8);
+
+}
+
+to{
+
+ opacity:1;
+ transform:scale(1);
+
+}
+
+}
+
+/* ===============================
+FLOAT
+================================ */
+
+@keyframes floating{
+
+0%{
+
+ transform:translateY(0);
+
+}
+
+50%{
+
+ transform:translateY(-12px);
+
+}
+
+100%{
+
+ transform:translateY(0);
+
+}
+
+}
+
+/* ===============================
+GLOW
+================================ */
+
+@keyframes glow{
+
+0%{
+
+ box-shadow:0 0 5px #38bdf8;
+
+}
+
+50%{
+
+ box-shadow:0 0 20px #38bdf8;
+
+}
+
+100%{
+
+ box-shadow:0 0 5px #38bdf8;
+
+}
+
+}
+
+/* ===============================
+HERO
+================================ */
+
+#home{
+
+ animation:fadeIn 1.2s ease;
+
+}
+
+#home h1{
+
+ animation:slideLeft 1s ease;
+
+}
+
+#home h3{
+
+ animation:slideRight 1.2s ease;
+
+}
+
+#home p{
+
+ animation:fadeIn 1.5s ease;
+
+}
+
+/* ===============================
+BUTTONS
+================================ */
+
+.btn{
+
+ animation:zoomIn 1.2s ease;
+
+}
+
+.btn:hover{
+
+ animation:glow 1.2s infinite;
+
+}
+
+.btn-outline:hover{
+
+ animation:glow 1.2s infinite;
+
+}
+
+/* ===============================
+CARDS
+================================ */
+
+#skills li,
+#projects ul,
+#education,
+#achievements,
+#responsibility{
+
+ animation:fadeIn 1.3s ease;
+
+}
+
+/* ===============================
+HOVER EFFECT
+================================ */
+
+#skills li:hover{
+
+ transform:translateY(-10px) scale(1.03);
+
+}
+
+nav ul li a{
+
+ position:relative;
+
+}
+
+nav ul li a::after{
+
+ content:"";
+ position:absolute;
+ left:0;
+ bottom:-5px;
+
+ width:0;
+ height:2px;
+
+ background:#38bdf8;
+
+ transition:.4s;
+
+}
+
+nav ul li a:hover::after{
+
+ width:100%;
+
+}
+
+/* ===============================
+FOOTER
+================================ */
+
+footer{
+
+ animation:fadeIn 2s ease;
+
+}
