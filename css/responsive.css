@@ -4,186 +4,94 @@
 
 @media (max-width:1200px){
 
-    section{
-        padding:80px 7%;
-    }
-    
-    nav{
-        width:95%;
-    }
-    
-    }
-    
-    
-    /* ===============================
-       TABLETS
-    ================================ */
-    
-    @media (max-width:992px){
-    
-    h1{
-        font-size:45px;
-    }
-    
-    h2{
-        font-size:32px;
-    }
-    
-    h3{
-        font-size:22px;
-    }
-    
-    nav{
-    
-        flex-direction:column;
-        height:auto;
-        padding:20px 0;
-    
-    }
-    
+    section{ padding:80px 7%; }
+
+    nav ul{ gap:18px; }
+    nav ul li a{ font-size:14px; }
+}
+
+/* ===============================
+   TABLETS: hamburger menu
+================================ */
+
+@media (max-width:992px){
+
+    h1{ font-size:44px; }
+    h2{ font-size:32px; }
+
+    #menuToggle{ display:block; }
+
     nav ul{
-    
-        margin-top:20px;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:20px;
-    
-    }
-    
-    #home{
-    
-        text-align:center;
-        align-items:center;
-    
-    }
-    
-    #home p{
-    
+        position:absolute;
+        top:var(--header-h);
+        left:0;
         width:100%;
-    
+        flex-direction:column;
+        gap:0;
+        background:var(--bg);
+        border-bottom:1px solid var(--border);
+        max-height:0;
+        overflow:hidden;
+        transition:max-height .4s ease;
     }
-    
-    #skills ul{
-    
-        grid-template-columns:1fr;
-    
-    }
-    
-    }
-    
-    
-    /* ===============================
-       MOBILE
-    ================================ */
-    
-    @media (max-width:768px){
-    
-    section{
-    
-        padding:70px 6%;
-    
-    }
-    
-    h1{
-    
-        font-size:36px;
-    
-    }
-    
-    h2{
-    
-        font-size:28px;
-    
-    }
-    
-    h3{
-    
-        font-size:20px;
-    
-    }
-    
-    nav h2{
-    
-        font-size:22px;
-    
-    }
-    
-    nav ul{
-    
-        gap:15px;
-    
-    }
-    
-    .btn,
-    .btn-outline{
-    
+
+    nav ul.open{ max-height:520px; }
+
+    nav ul li a{
         display:block;
-    
-        width:220px;
-    
-        margin:15px auto;
-    
-        text-align:center;
-    
+        padding:14px 8%;
+        font-size:16px;
     }
-    
-    #home{
-    
-        padding-top:100px;
-    
-    }
-    
-    #about p{
-    
-        text-align:left;
-    
-    }
-    
-    }
-    
-    
-    /* ===============================
-       SMALL MOBILE
-    ================================ */
-    
-    @media (max-width:480px){
-    
-    section{
-    
-        padding:60px 20px;
-    
-    }
-    
-    h1{
-    
-        font-size:30px;
-    
-    }
-    
-    h2{
-    
-        font-size:24px;
-    
-    }
-    
-    p{
-    
-        font-size:15px;
-    
-    }
-    
-    nav ul{
-    
-        flex-direction:column;
-        align-items:center;
-    
-    }
-    
+
+    nav ul li a::after{ display:none; }
+
+    #home{ text-align:center; }
+    .hero-desc{ margin-left:auto; margin-right:auto; }
+    .hero-buttons,
+    .socials{ justify-content:center; }
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width:768px){
+
+    section{ padding:70px 6%; }
+
+    h1{ font-size:36px; }
+    h2{ font-size:28px; }
+    h3{ font-size:20px; }
+
+    .hero-desc,
+    .about-text{ font-size:16px; }
+
+    .big{ font-size:44px; }
+
+    .timeline{ padding-left:22px; }
+    .timeline-item::before{ left:-34px; }
+}
+
+/* ===============================
+   SMALL MOBILE
+================================ */
+
+@media (max-width:480px){
+
+    section{ padding:60px 20px; }
+
+    h1{ font-size:30px; }
+    h2{ font-size:24px; }
+
+    p{ font-size:15px; }
+
     .btn,
     .btn-outline{
-    
         width:100%;
-    
+        justify-content:center;
     }
-    
-    }
+
+    .hero-buttons{ flex-direction:column; }
+
+    #topBtn{ right:15px; bottom:15px; }
+}

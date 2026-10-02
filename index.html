@@ -1,302 +1,404 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roshan | Portfolio</title>
+<title>Roshan Kumar Mahto | ML &amp; AI Portfolio</title>
+<meta name="description" content="Portfolio of Roshan Kumar Mahto, B.Tech CSAI student at IIIT Delhi working on Machine Learning, NLP and Computer Vision.">
+<meta name="author" content="Roshan Kumar Mahto">
+<meta name="theme-color" content="#0f172a">
 
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/animation.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Roshan Kumar Mahto | ML &amp; AI Portfolio">
+<meta property="og:description" content="B.Tech CSAI at IIIT Delhi. Machine Learning, NLP, Computer Vision. 600+ problems solved.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Arial' font-weight='700' text-anchor='middle' fill='%2338bdf8'%3ER%3C/text%3E%3C/svg%3E">
+
+<script>
+/* apply saved theme before paint to avoid a flash */
+document.documentElement.classList.add("js");
+try{
+    var t = localStorage.getItem("theme");
+    if(t === "light" || t === "dark"){ document.documentElement.setAttribute("data-theme", t); }
+}catch(e){}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-<header>
-<nav>
-<h2>Roshan</h2>
+<a href="#home" class="skip-link">Skip to content</a>
 
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#responsibility">Responsibility</a></li>
-<li><a href="#achievements">Achievements</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-<button id="themeToggle">
-    <i class="fa-solid fa-moon"></i>
-</button>
+<header id="header">
+<nav aria-label="Main navigation">
+    <a href="#home" class="logo">Roshan<span>.</span></a>
+
+    <ul id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#coding">Coding</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <button id="themeToggle" type="button" aria-label="Toggle dark and light theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
 </nav>
 </header>
 
+<main>
+
+<!-- ===========================  HOME  =========================== -->
 <section id="home">
-<h1>Hi, I'm Roshan Kumar Mahto</h1>
+    <div class="hero-text">
+        <p class="eyebrow">Hello, I'm</p>
+        <h1>Roshan Kumar Mahto</h1>
+        <h3><span id="typing"></span></h3>
 
-<h3><span id="typing"></span></h3>
+        <p class="hero-desc">
+            Final-year B.Tech student in Computer Science and Artificial Intelligence
+            at <strong>IIIT Delhi</strong>. I build Machine Learning, Computer Vision
+            and NLP systems, and I have solved <strong data-stat="total">600+</strong>
+            problems across LeetCode, GeeksforGeeks and NeetCode.
+        </p>
 
-<p>
-Currently pursuing B.Tech in Computer Science and Artificial Intelligence
-at IIIT Delhi. Interested in Machine Learning, Computer Vision,
-Natural Language Processing and Artificial Intelligence.
-</p>
+        <div class="hero-buttons">
+            <a href="files/Roshan_Kumar_Resume.pdf" download class="btn"><i class="fa-solid fa-download"></i> Download Resume</a>
+            <a href="#projects" class="btn-outline">View Projects</a>
+        </div>
 
-<a href="files/Roshan_Kumar_Resume.pdf" download class="btn">Download Resume</a>
-
-<a href="#projects" class="btn-outline">View Projects</a>
-
+        <div class="socials">
+            <a href="https://github.com/roshan22418" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/roshan228906/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://leetcode.com/u/Roshan228906/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+            <a href="mailto:roshan22418@iiitd.ac.in" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </div>
 </section>
 
-<section id="about">
+<!-- ===========================  ABOUT  =========================== -->
+<section id="about" class="alt reveal">
+    <h2>About Me</h2>
 
-<h2>About Me</h2>
+    <p class="about-text">
+        I am a Computer Science and Artificial Intelligence undergraduate at
+        Indraprastha Institute of Information Technology Delhi (IIIT Delhi).
+        I enjoy turning research ideas into working systems: from CNN-based plant
+        disease detection to transformer models for mental health counseling.
+        I also love teaching Machine Learning, LLMs and coding to others.
+    </p>
 
-<p>
-I am a Computer Science and Artificial Intelligence undergraduate at
-Indraprastha Institute of Information Technology Delhi (IIIT Delhi).
-I enjoy learning new technologies and working on Machine Learning,
-Computer Vision and Natural Language Processing projects.
-</p>
-
+    <div class="highlights">
+        <div class="highlight"><span class="num">7.4</span><span class="label">CGPA at IIIT Delhi</span></div>
+        <div class="highlight"><span class="num" data-stat="total">600+</span><span class="label">Problems Solved</span></div>
+        <div class="highlight"><span class="num">3</span><span class="label">ML / NLP Projects</span></div>
+        <div class="highlight"><span class="num">96%+</span><span class="label">Best Model Accuracy</span></div>
+    </div>
 </section>
 
-<section id="skills">
+<!-- ===========================  SKILLS  =========================== -->
+<section id="skills" class="reveal">
+    <h2>Skills</h2>
 
-<h2>Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3><i class="fa-solid fa-terminal"></i> Programming</h3>
+            <div class="chips"><span>C</span><span>C++</span><span>Python</span><span>Java (OOP)</span><span>SQL</span></div>
+        </div>
 
-<h3>Programming Languages</h3>
-<ul>
-<li>C / C++</li>
-<li>Python</li>
-</ul>
+        <div class="skill-card">
+            <h3><i class="fa-solid fa-brain"></i> ML &amp; AI</h3>
+            <div class="chips">
+                <span>PyTorch</span><span>Hugging Face Transformers</span><span>Scikit-learn</span>
+                <span>CNN</span><span>LSTM</span><span>RoBERTa / BART</span><span>LLMs</span>
+                <span>NLTK</span><span>Computer Vision</span><span>NLP</span>
+            </div>
+        </div>
 
-<h3>Core Subjects</h3>
-<ul>
-<li>Data Structures and Algorithms</li>
-<li>Operating Systems</li>
-<li>Object Oriented Programming</li>
-<li>Database Management Systems</li>
-<li>Machine Learning</li>
-</ul>
+        <div class="skill-card">
+            <h3><i class="fa-solid fa-chart-column"></i> Data</h3>
+            <div class="chips"><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>MySQL</span></div>
+        </div>
 
-<h3>Tools</h3>
-<ul>
-<li>Git</li>
-<li>GitHub</li>
-<li>VS Code</li>
-<li>MySQL</li>
-</ul>
+        <div class="skill-card">
+            <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h3>
+            <div class="chips"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Streamlit</span><span>Kotlin</span></div>
+        </div>
 
+        <div class="skill-card wide">
+            <h3><i class="fa-solid fa-book-open"></i> Core Subjects &amp; Electives</h3>
+            <div class="chips">
+                <span>Data Structures &amp; Algorithms</span><span>Algorithm Design &amp; Analysis</span>
+                <span>Operating Systems</span><span>Computer Organization</span>
+                <span>Database Management Systems</span><span>Discrete Structures</span>
+                <span>Object Oriented Programming</span><span>Artificial Intelligence</span>
+                <span>Machine Learning</span><span>Computer Vision</span>
+                <span>Natural Language Processing</span>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="education">
+<!-- ===========================  CODING PROFILES  =========================== -->
+<section id="coding" class="alt reveal">
+    <h2>Competitive Programming</h2>
+    <p class="section-sub">
+        Practice stats from my coding profiles
+        <span id="statsUpdated"></span>
+    </p>
 
-<h2>Education</h2>
+    <div class="coding-grid">
 
-<h3>IIIT Delhi</h3>
-<p>B.Tech (CSAI)</p>
-<p>2022 - 2026</p>
+        <a class="coding-card" href="https://leetcode.com/u/Roshan228906/" target="_blank" rel="noopener noreferrer">
+            <div class="coding-head"><i class="fa-solid fa-code"></i><h3>LeetCode</h3></div>
+            <div class="big" data-stat="lc-total">102</div>
+            <div class="big-label">problems solved</div>
+            <ul class="mini">
+                <li><span class="dot easy"></span> Easy <b data-stat="lc-easy">48</b></li>
+                <li><span class="dot medium"></span> Medium <b data-stat="lc-medium">48</b></li>
+                <li><span class="dot hard"></span> Hard <b data-stat="lc-hard">6</b></li>
+            </ul>
+            <p class="meta">Contest rating <b data-stat="lc-rating">1458</b> &middot; <b data-stat="lc-contests">9</b> contests</p>
+        </a>
 
+        <a class="coding-card" href="https://www.geeksforgeeks.org/profile/roshankumadu6o?tab=activity" target="_blank" rel="noopener noreferrer">
+            <div class="coding-head"><i class="fa-solid fa-laptop-code"></i><h3>GeeksforGeeks</h3></div>
+            <div class="big" data-stat="gfg-total">519</div>
+            <div class="big-label">problems solved</div>
+            <ul class="mini">
+                <li>Coding score <b data-stat="gfg-score">1475</b></li>
+                <li>Institute rank <b>#<span data-stat="gfg-rank">38</span></b></li>
+            </ul>
+            <p class="meta">IIIT Delhi leaderboard</p>
+        </a>
 
-<h3>Class XII</h3>
-<p>CBSE</p>
+        <a class="coding-card" href="https://neetcode.io/user/MythicGoblin425" target="_blank" rel="noopener noreferrer">
+            <div class="coding-head"><i class="fa-solid fa-list-check"></i><h3>NeetCode</h3></div>
+            <div class="big"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+            <div class="big-label">view my profile</div>
+            <ul class="mini">
+                <li>NeetCode 150 / 250 practice</li>
+                <li>Solutions on <a href="https://github.com/roshan22418/neetcode_250submissions" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            </ul>
+            <p class="meta">Handle: MythicGoblin425</p>
+        </a>
 
+    </div>
+</section>
 
-<h3>Class X</h3>
-<p>CBSE</p>
+<!-- ===========================  EDUCATION  =========================== -->
+<section id="education" class="reveal">
+    <h2>Education</h2>
 
+    <div class="timeline">
 
-<!-- ===========================
-     PROJECTS
-=========================== -->
+        <div class="timeline-item">
+            <span class="time">2022 &ndash; Present</span>
+            <h3>B.Tech, Computer Science &amp; Artificial Intelligence</h3>
+            <p class="place">Indraprastha Institute of Information Technology Delhi (IIIT Delhi)</p>
+            <span class="score">CGPA 7.4</span>
+        </div>
 
-<section id="projects">
+        <div class="timeline-item">
+            <span class="time">2019 &ndash; 2021</span>
+            <h3>Class XII (CBSE, PCM)</h3>
+            <p class="place">Rajkiya Sarvodaya Bal Vidyalaya, Patparganj, Delhi</p>
+            <span class="score">94.8% &middot; School Topper</span>
+        </div>
 
+        <div class="timeline-item">
+            <span class="time">2017 &ndash; 2019</span>
+            <h3>Class X (CBSE)</h3>
+            <p class="place">Rajkiya Sarvodaya Bal Vidyalaya, Delhi</p>
+            <span class="score">83.8%</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===========================  PROJECTS  =========================== -->
+<section id="projects" class="alt reveal">
     <h2>Projects</h2>
 
     <div class="project-container">
 
-        <!-- Project 1 -->
-
-        <div class="project-card">
-
+        <article class="project-card">
             <div class="project-image">
-                <img src="images/plant-disease.jpg" alt="Plant Disease Detection">
+                <img src="images/plant-disease.jpg" alt="Plant disease detection project" loading="lazy">
             </div>
-
             <div class="project-content">
-
-                <h3>Plant Disease Detection and Recommendation</h3>
-
+                <span class="project-meta">Feb 2025 &ndash; Apr 2025 &middot; Team of 4 &middot; Guide: Prof. Saket Anand</span>
+                <h3>Plant Disease Detection &amp; Recommendation</h3>
                 <p>
-                    Developed a CNN-based plant disease detection system with
-                    recommendation support using LLM. Achieved 96.27% test accuracy.
+                    CNN-based plant disease detection with LLM-generated treatment
+                    recommendations. Reached <strong>96.27% test accuracy</strong>.
                 </p>
-
                 <div class="tech-stack">
-
-                    <span>Machine Learning</span>
-                    <span>LLM</span>
-                    <span>Streamlit</span>
-                    <span>Kotlin</span>
-
+                    <span>Machine Learning</span><span>CNN</span><span>LLM</span><span>Streamlit</span><span>Kotlin</span>
                 </div>
-
                 <div class="project-buttons">
-
-                    <a href="#" class="project-btn">GitHub</a>
-
-                    <a href="#" class="project-btn-outline">Live Demo</a>
-
+                    <a href="https://github.com/roshan22418/SML_Project_plantDisease-detection" target="_blank" rel="noopener noreferrer" class="project-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                 </div>
-
             </div>
+        </article>
 
-        </div>
-
-        <!-- Project 2 -->
-
-        <div class="project-card">
-
+        <article class="project-card">
             <div class="project-image">
-                <img src="images/cusin.jpg" alt="Cuisine Sentiment Analysis">
+                <img src="images/cusin.jpg" alt="Cuisine sentiment analysis project" loading="lazy">
             </div>
-
             <div class="project-content">
-
+                <span class="project-meta">Jan 2025 &ndash; Apr 2025 &middot; Guide: Prof. Ganesh Bagler</span>
                 <h3>Cusin Sentiment Analysis</h3>
-
                 <p>
-                    Performed sentiment analysis on more than 11 lakh food reviews
-                    using traditional Machine Learning and Deep Learning models.
+                    Sentiment analysis on <strong>11 lakh+ food reviews</strong> comparing
+                    Logistic Regression, SVM and Random Forest with RoBERTa and LSTM.
+                    RoBERTa performed best at <strong>~97% accuracy</strong>.
                 </p>
-
                 <div class="tech-stack">
-
-                    <span>Python</span>
-                    <span>PyTorch</span>
-                    <span>RoBERTa</span>
-                    <span>LSTM</span>
-
+                    <span>Python</span><span>PyTorch</span><span>RoBERTa</span><span>LSTM</span><span>Scikit-learn</span><span>NLTK</span>
                 </div>
-
                 <div class="project-buttons">
-
-                    <a href="#" class="project-btn">GitHub</a>
-
+                    <a href="https://github.com/roshan22418/Cusin_Sentiment_analysis" target="_blank" rel="noopener noreferrer" class="project-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                 </div>
-
             </div>
+        </article>
 
-        </div>
-
-        <!-- Project 3 -->
-
-        <div class="project-card">
-
+        <article class="project-card">
             <div class="project-image">
-                <img src="images/mental-health.jpg" alt="Mental Health">
-
+                <img src="images/mental-health.jpg" alt="Mental health counseling dialogue project" loading="lazy">
             </div>
-
             <div class="project-content">
-
+                <span class="project-meta">Jan 2025 &ndash; Apr 2025 &middot; Team of 3 &middot; Guide: Prof. Md. Shad Akhtar</span>
                 <h3>Next Utterance Prediction for Mental Health Counseling</h3>
-
                 <p>
-                    Developed transformer-based dialogue models integrating
-                    emotional context and patient simulation using Hugging Face
-                    Transformers and PyTorch.
+                    Built Sentiment-Infused BART and a dual-model architecture
+                    (T-GenSim) for empathetic therapist responses. Reached a
+                    <strong>BERT F1 of 0.8480</strong>, beating T5-small and BART-base baselines.
                 </p>
-
                 <div class="tech-stack">
-
-                    <span>PyTorch</span>
-                    <span>NLP</span>
-                    <span>Transformers</span>
-                    <span>BART</span>
-
+                    <span>PyTorch</span><span>Transformers</span><span>BART</span><span>NLP</span>
                 </div>
-
                 <div class="project-buttons">
-
-                    <a href="#" class="project-btn">GitHub</a>
-
+                    <a href="https://github.com/roshan22418/NLP_Project" target="_blank" rel="noopener noreferrer" class="project-btn"><i class="fa-brands fa-github"></i> GitHub</a>
                 </div>
-
             </div>
-
-        </div>
+        </article>
 
     </div>
 
-</section>
-<section id="responsibility">
-
-<h2>Positions of Responsibility</h2>
-
-<ul>
-<li>Organising Team - E-Summit 2023</li>
-<li>Mentor for 1st Year Students</li>
-</ul>
-
-</section>
-
-<section id="achievements">
-
-<h2>Achievements</h2>
-
-<ul>
-<!-- <li>School Topper in Class XII</li>
-<li>Solved 300+ Problems across LeetCode, Codeforces and GFG.</li>
-<li>Won School and Zonal Level Mental Math Competitions.</li> -->
-</ul>
-
-</section>
-
-<section>
-
-<h2>Interests & Hobbies</h2>
-
-<ul>
-<li>Teaching Machine Learning, LLM and Coding</li>
-<li>Reading Books</li>
-<li>Playing Cricket</li>
-<li>Watching Cricket</li>
-<li>Cooking</li>
-</ul>
-
+    <div class="more-projects">
+        <h3>More on GitHub</h3>
+        <div class="more-grid">
+            <a href="https://bakeryshopprototype1.vercel.app" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-cake-candles"></i>
+                <b>Bakery Shop Prototype</b>
+                <span>Live web prototype</span>
+            </a>
+            <a href="https://github.com/roshan22418/DBMS_Fianl_PRoject" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-database"></i>
+                <b>DBMS Final Project</b>
+                <span>Full-stack web application</span>
+            </a>
+            <a href="https://github.com/roshan22418/HCL_hackathon_2025_IIITD" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-trophy"></i>
+                <b>HCL Hackathon 2025</b>
+                <span>Team solution, IIIT Delhi</span>
+            </a>
+            <a href="https://github.com/roshan22418?tab=repositories" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                <b>All repositories</b>
+                <span>DSA, C++ library, Graphics</span>
+            </a>
+        </div>
+    </div>
 </section>
 
-<section id="contact">
+<!-- ===========================  EXPERIENCE / RESPONSIBILITY  =========================== -->
+<section id="experience" class="reveal">
+    <h2>Positions of Responsibility</h2>
 
-<h2>Contact</h2>
-
-<p>Email : roshan22418@iiitd.ac.in</p>
-
-<p>GitHub : https://github.com/roshan22418</p>
-
-<p>LinkedIn : https://www.linkedin.com/in/roshan228906/</p>
-
+    <div class="timeline">
+        <div class="timeline-item">
+            <span class="time">Sep 2024 &ndash; Apr 2025</span>
+            <h3>Mentor, First-Year Students</h3>
+            <p class="place">IIIT Delhi</p>
+        </div>
+        <div class="timeline-item">
+            <span class="time">Apr 2023</span>
+            <h3>Organising Team Member, E-Summit 2023</h3>
+            <p class="place">IIIT Delhi</p>
+        </div>
+    </div>
 </section>
+
+<!-- ===========================  ACHIEVEMENTS  =========================== -->
+<section id="achievements" class="alt reveal">
+    <h2>Achievements</h2>
+
+    <div class="achievement-grid">
+        <div class="achievement"><i class="fa-solid fa-medal"></i><p>School Topper in Class XII</p></div>
+        <div class="achievement"><i class="fa-solid fa-code"></i><p><span data-stat="total">600+</span> problems solved on LeetCode, GFG and NeetCode</p></div>
+        <div class="achievement"><i class="fa-solid fa-ranking-star"></i><p>Rank <span data-stat="gfg-rank">38</span> at IIIT Delhi on GeeksforGeeks</p></div>
+        <div class="achievement"><i class="fa-solid fa-trophy"></i><p>Won School and Zonal level Mental Math competitions</p></div>
+    </div>
+
+    <div class="interests">
+        <h3>Interests &amp; Hobbies</h3>
+        <div class="chips center">
+            <span>Teaching ML, LLMs &amp; Coding</span><span>Reading Books</span>
+            <span>Playing Cricket</span><span>Watching Cricket</span><span>Cooking</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===========================  CONTACT  =========================== -->
+<section id="contact" class="reveal">
+    <h2>Get In Touch</h2>
+    <p class="section-sub">Open to internships, research collaborations and interesting projects.</p>
+
+    <div class="contact-grid">
+        <a href="mailto:roshan22418@iiitd.ac.in" class="contact-card">
+            <i class="fa-solid fa-envelope"></i><b>Email</b><span>roshan22418@iiitd.ac.in</span>
+        </a>
+        <a href="https://github.com/roshan22418" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <i class="fa-brands fa-github"></i><b>GitHub</b><span>roshan22418</span>
+        </a>
+        <a href="https://www.linkedin.com/in/roshan228906/" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <i class="fa-brands fa-linkedin-in"></i><b>LinkedIn</b><span>roshan228906</span>
+        </a>
+    </div>
+</section>
+
+</main>
 
 <footer>
-
-<p>© 2026 Roshan Kumar Mahto. All Rights Reserved.</p>
-
+    <p id="footerText">&copy; 2026 Roshan Kumar Mahto. All rights reserved.</p>
 </footer>
 
-<script src="js/script.js"></script>
+<button id="topBtn" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
 <script src="js/theme.js"></script>
+<script src="js/script.js"></script>
 <script src="js/typing.js"></script>
-<script src="js/projects.js"></script>
+<script src="js/coding-stats.js"></script>
 
 </body>
 </html>

@@ -61,11 +61,13 @@ portfolio/
 │   ├── script.js
 │   ├── theme.js
 │   ├── typing.js
-│   └── projects.js
+│   └── coding-stats.js
 │
 ├── images/
 │
-├── icons/
+├── data/stats.json      (auto-generated coding stats)
+│
+├── scripts/update-stats.js
 │
 ├── files/
 │   └── Roshan_Kumar_Resume.pdf
@@ -183,9 +185,9 @@ Developed transformer-based dialogue models for mental health counseling.
 
 **Email:** roshan22418@iiitd.ac.in
 
-**GitHub:** Add your GitHub profile link
+**GitHub:** https://github.com/roshan22418
 
-**LinkedIn:** Add your LinkedIn profile link
+**LinkedIn:** https://www.linkedin.com/in/roshan228906/
 
 ---
 
@@ -194,6 +196,18 @@ Developed transformer-based dialogue models for mental health counseling.
 This project is created for educational and personal portfolio purposes.
 
 You are welcome to use the project structure for learning, but please do not copy the content without permission.
+
+---
+
+## 📊 Live coding stats
+
+LeetCode and GeeksforGeeks numbers come from `data/stats.json`. Refresh it with:
+
+```
+node scripts/update-stats.js
+```
+
+The GitHub Action in `.github/workflows/update-stats.yml` does this daily once the repo is on GitHub. NeetCode has no public API, so it is linked only.
 
 ---
 

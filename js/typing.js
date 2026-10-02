@@ -5,13 +5,13 @@
 const typingElement = document.getElementById("typing");
 
 const words = [
-
-    "B.Tech (CSAI) Student",
+    "B.Tech (CSAI) Student at IIIT Delhi",
     "Machine Learning Enthusiast",
     "Computer Vision",
     "Natural Language Processing"
-
 ];
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 let wordIndex = 0;
 let charIndex = 0;
@@ -23,47 +23,36 @@ function typeEffect(){
 
     if(!deleting){
 
-        typingElement.textContent =
-            currentWord.substring(0,charIndex+1);
-
         charIndex++;
+        typingElement.textContent = currentWord.substring(0, charIndex);
 
         if(charIndex === currentWord.length){
-
             deleting = true;
-
-            setTimeout(typeEffect,1800);
-
+            setTimeout(typeEffect, 1800);
             return;
-
         }
 
     }
     else{
 
-        typingElement.textContent =
-            currentWord.substring(0,charIndex-1);
-
         charIndex--;
+        typingElement.textContent = currentWord.substring(0, charIndex);
 
         if(charIndex === 0){
-
             deleting = false;
-
-            wordIndex++;
-
-            if(wordIndex === words.length){
-
-                wordIndex = 0;
-
-            }
-
+            wordIndex = (wordIndex + 1) % words.length;
         }
 
     }
 
-    setTimeout(typeEffect,deleting ? 60 : 120);
+    setTimeout(typeEffect, deleting ? 50 : 100);
 
 }
 
-typeEffect();
+if(reduceMotion){
+    typingElement.textContent = words[0];
+    typingElement.style.animation = "none";
+}
+else{
+    typeEffect();
+}

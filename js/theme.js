@@ -1,49 +1,36 @@
 /* ===========================
    DARK / LIGHT MODE
+   (saved theme is applied in <head> to avoid a flash)
 =========================== */
 
+const root = document.documentElement;
 const themeBtn = document.getElementById("themeToggle");
-const body = document.body;
-const icon = themeBtn.querySelector("i");
+const themeIcon = themeBtn.querySelector("i");
 
-/* ===========================
-   LOAD SAVED THEME
-=========================== */
+function applyTheme(theme){
 
-const savedTheme = localStorage.getItem("theme");
+    root.setAttribute("data-theme", theme);
 
-if(savedTheme === "light"){
+    themeIcon.classList.toggle("fa-moon", theme === "dark");
+    themeIcon.classList.toggle("fa-sun", theme === "light");
 
-    body.classList.add("light");
-
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if(meta){
+        meta.setAttribute("content", theme === "light" ? "#f8fafc" : "#0f172a");
+    }
 
 }
 
-/* ===========================
-   TOGGLE THEME
-=========================== */
+applyTheme(root.getAttribute("data-theme") || "dark");
 
-themeBtn.addEventListener("click",()=>{
+themeBtn.addEventListener("click", () => {
 
-    body.classList.toggle("light");
+    const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
 
-    if(body.classList.contains("light")){
+    applyTheme(next);
 
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
-
-        localStorage.setItem("theme","light");
-
-    }
-    else{
-
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
-
-        localStorage.setItem("theme","dark");
-
-    }
+    try{
+        localStorage.setItem("theme", next);
+    }catch(e){}
 
 });

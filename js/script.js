@@ -1,194 +1,100 @@
 /* ===========================
-   STICKY NAVBAR
+   HEADER SHADOW ON SCROLL + BACK TO TOP
 =========================== */
 
-const header = document.querySelector("header");
+const header = document.getElementById("header");
+const topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll", () => {
+function onScroll(){
 
-    if(window.scrollY > 50){
+    header.classList.toggle("scrolled", window.scrollY > 50);
+    topBtn.classList.toggle("show", window.scrollY > 400);
 
-        header.style.background = "#111827";
-        header.style.boxShadow = "0 5px 20px rgba(0,0,0,.3)";
+}
 
-    }
-    else{
+window.addEventListener("scroll", onScroll, { passive:true });
+onScroll();
 
-        header.style.background = "#0f172a";
-        header.style.boxShadow = "none";
-
-    }
-
+topBtn.addEventListener("click", () => {
+    window.scrollTo({ top:0, behavior:"smooth" });
 });
 
 
 /* ===========================
-   ACTIVE NAVIGATION
+   MOBILE MENU
 =========================== */
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav ul li a");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const navLinks = navMenu.querySelectorAll("a");
 
-window.addEventListener("scroll",()=>{
+function setMenu(open){
 
-    let current = "";
+    navMenu.classList.toggle("open", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.querySelector("i").className = open ? "fa-solid fa-xmark" : "fa-solid fa-bars";
 
-    sections.forEach(section=>{
+}
 
-        const sectionTop = section.offsetTop - 120;
-        const sectionHeight = section.clientHeight;
+menuToggle.addEventListener("click", () => {
+    setMenu(!navMenu.classList.contains("open"));
+});
 
-        if(window.scrollY >= sectionTop){
+navLinks.forEach(link => {
+    link.addEventListener("click", () => setMenu(false));
+});
 
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(link=>{
-
-        link.classList.remove("active");
-
-        if(link.getAttribute("href") == "#" + current){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
+document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){ setMenu(false); }
 });
 
 
 /* ===========================
-   SMOOTH SCROLL
+   ACTIVE NAVIGATION (IntersectionObserver)
 =========================== */
 
-navLinks.forEach(link=>{
+const sectionsWithId = document.querySelectorAll("main section[id]");
 
-    link.addEventListener("click",(e)=>{
+const navObserver = new IntersectionObserver((entries) => {
 
-        e.preventDefault();
+    entries.forEach(entry => {
 
-        const id = link.getAttribute("href");
+        if(!entry.isIntersecting){ return; }
 
-        const target = document.querySelector(id);
-
-        window.scrollTo({
-
-            top: target.offsetTop - 70,
-
-            behavior:"smooth"
-
+        navLinks.forEach(link => {
+            link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
         });
 
     });
 
-});
+}, { rootMargin:"-45% 0px -50% 0px" });
+
+sectionsWithId.forEach(section => navObserver.observe(section));
 
 
 /* ===========================
-   SCROLL TO TOP BUTTON
+   REVEAL ON SCROLL
 =========================== */
 
-const topBtn = document.createElement("button");
+const revealObserver = new IntersectionObserver((entries, obs) => {
 
-topBtn.innerHTML = "↑";
+    entries.forEach(entry => {
 
-topBtn.id = "topBtn";
-
-document.body.appendChild(topBtn);
-
-topBtn.style.position = "fixed";
-topBtn.style.bottom = "30px";
-topBtn.style.right = "30px";
-topBtn.style.width = "50px";
-topBtn.style.height = "50px";
-topBtn.style.border = "none";
-topBtn.style.borderRadius = "50%";
-topBtn.style.background = "#38bdf8";
-topBtn.style.color = "white";
-topBtn.style.fontSize = "22px";
-topBtn.style.cursor = "pointer";
-topBtn.style.display = "none";
-topBtn.style.zIndex = "999";
-
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY > 400){
-
-        topBtn.style.display = "block";
-
-    }
-    else{
-
-        topBtn.style.display = "none";
-
-    }
-
-});
-
-
-topBtn.addEventListener("click",()=>{
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-});
-
-
-/* ===========================
-   REVEAL ANIMATION
-=========================== */
-
-const revealElements = document.querySelectorAll("section");
-
-const reveal = ()=>{
-
-    revealElements.forEach(section=>{
-
-        const windowHeight = window.innerHeight;
-
-        const revealTop = section.getBoundingClientRect().top;
-
-        if(revealTop < windowHeight - 120){
-
-            section.style.opacity = "1";
-            section.style.transform = "translateY(0)";
-
+        if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
         }
 
     });
 
-};
+}, { threshold:0.08 });
 
-
-revealElements.forEach(section=>{
-
-    section.style.opacity = "0";
-    section.style.transform = "translateY(60px)";
-    section.style.transition = ".8s ease";
-
-});
-
-window.addEventListener("scroll",reveal);
-
-reveal();
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
 
 /* ===========================
    CURRENT YEAR
 =========================== */
 
-const footer = document.querySelector("footer p");
-
-const year = new Date().getFullYear();
-
-footer.innerHTML = `© ${year} Roshan Kumar Mahto. All Rights Reserved.`;
+document.getElementById("footerText").textContent =
+    "© " + new Date().getFullYear() + " Roshan Kumar Mahto. All rights reserved.";
